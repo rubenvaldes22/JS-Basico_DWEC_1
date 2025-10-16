@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio entrega js básico</title>
+</head>
+<body>
+    <script>
+        //Declara una variable de tipo string y asígnale un mensaje de saludo. Luego, imprime la variable en la consola.
+        let x = "hola"
+        console.log(x);
+    </script>
+    <script>
+        //Declara una variable de tipo number y asígnale tu edad. Luego, imprime la variable en la consola.
+        let y = "18"
+        console.log(y);
+    </script>
+    <script>
+        //Declara una variable de tipo boolean y asígnale true o false según tu preferencia. Luego, imprime la variable en la consola.
+        let a = true
+        console.log(a);
+    </script>
+    <script>
+        //Declara una variable de tipo null y otra de tipo undefined. Luego, imprime ambas variables en la consola.
+        let b = null
+        let c = undefined
+        console.log(b,c);
+    </script>
+    <script>
+        // 1.5. Crear un objeto artículo y mostrarlo en consola 
+        const articulo = {
+            name: "pantalon",
+            price: 15.99,
+            category: "Ropa"
+        };
+        console.log(articulo);
+    </script>
+    <script>
+        //Declara un array que contenga nombres de ciudades. Imprime el array en la consola.
+        const ciudades = ["madrid", "barcelona", "Jerez"];
+        console.log(ciudades);
+    </script>
+    <script>
+        //Declara una variable y asígnale tu color favorito. Luego, modifica la variable con otro color e imprime ambos valores en la consola.
+        let color = "azul"
+        console.log(color);
+        color = "rojo"
+        console.log(color);
+    </script>
+    <script>
+        // Declara dos variables, una sin asignarle ningún valor y otra con el valor null. Imprime ambas variables en la consola
+        let variable1;
+        let variable2 = null;
+        console.log(variable1, variable2);
+    </script>
+    <script>
+        let variableFuera = "Estoy fuera de la funcion";
+
+        function miFuncion() {
+            let variableDentro = "Estoy dentro de la función";
+            console.log(variableDentro);  
+            console.log(variableFuera);   
+        }
+        miFuncion();
+        console.log(variableFuera);     
+    </script>
+    <script>
+        // Declara variables con nombres que sigan las reglas de JavaScript y otras que no las sigan. Imprime los nombres de las variables en la consola.
+        let nombre_valido = "válido";
+        let nombreInvalido = "inválido"; 
+        console.log(nombre_valido);
+        console.log(nombreInvalido);
+    </script>
+    <script>
+        //Utiliza diferentes operadores (+, -, *, /, %, ++, --) con variables que contengan números. Imprime los resultados en la consola.
+        let num1 = 6;
+        let num2 = 3;
+        console.log(num1 + num2);
+        console.log(num1 - num2);
+        console.log(num1 * num2);
+        console.log(num1 / num2);
+        console.log(num1 % num2);
+        num1++;
+        console.log(num1);
+        num2--;
+        console.log(num2);
+    </script>
+    <script>
+        //Declara una variable con una cadena de texto de varias líneas usando caracteres de escape (\n, \t). Imprime la cadena resultante en la consola.
+        let texto = "Hola,\n\tEste es un texto de varias líneas.\n\tBienvenido";
+        console.log(texto);
+    </script>
+    <script>
+        //Escribe un programa que verifique si un número es positivo, negativo o cero e imprima el resultado.
+        let numero = -1;
+        if (numero > 0) {
+            console.log("el numero es positivo");     
+        } else if (numero < 0) {
+            console.log("el numero es negativo");
+        } else {
+            console.log("el numero es cero");
+        }
+    </script>
+    <script>
+        // Crea un programa que determine si una persona es menor de edad, adulta o anciana según su edad.
+        let edad = 45;
+        if (edad >= 18 && edad <= 60){
+            console.log("es una persona adulta");
+        } else if (edad < 18){
+            console.log("es una persona menor de edad")
+        } else {
+            console.log(" es una persona anciana")
+        }
+    </script>
+    <script>
+        // Utiliza un bucle for para imprimir los valores de i desde 0 hasta 4.
+        for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+    </script>
+    <script>
+        // Utiliza un bucle while para imprimir los valores del contador desde 0 hasta 4.
+        let contador = 0;
+        while (contador < 5) {
+            console.log(contador);
+            contador++;
+        }
+    </script>
+    <script>
+        // Emplea un bucle do-while para imprimir los valores de x desde 0 hasta 4.
+        let i = 0;
+        do {
+            console.log(i);
+            i++;
+        } while (i < 5);
+    </script>
+    <script>
+        // Crea un bucle for que se detenga cuando i sea igual a 3 usando la instrucción break.
+        for (let i = 0; i < 5; i++) {
+            if (i === 3) {
+                break;
+            }
+            console.log(i);
+        }
+    </script>
+    <script>
+        // Implementa un bucle for que salte la iteración cuando j sea igual a 2 usando la instrucción continue.
+        for (let j = 0; j < 5; j++) {
+            if (j === 2) {
+                continue;
+            }
+            console.log(j);
+        }
+    </script>
+    <script>
+        // Convierte un número del 1 al 12 en el nombre del mes correspondiente. El programa debe solicitar al usuario que ingrese un número del 1 al 12 y luego mostrar el nombre del mes asociado.
+        // Ejemplo:
+        //• Ingresa un número del 1 al 12 para saber el mes correspondiente: 9
+        //• El mes correspondiente al número 9 es: Septiembre
+        let mesNumero = parseInt(prompt("Ingresa un número del 1 al 12 para saber el mes correspondiente:"));
+        let mesNombre;
+        switch (mesNumero) {
+            case 1:
+                mesNombre = "Enero";
+                break;
+            case 2:
+                mesNombre = "Febrero";
+                break;
+            case 3:
+                mesNombre = "Marzo";
+                break;
+            case 4:
+                mesNombre = "Abril";
+                break;
+            case 5:
+                mesNombre = "Mayo";
+                break;
+            case 6:
+                mesNombre = "Junio";
+                break;
+            case 7:
+                mesNombre = "Julio";
+                break;
+            case 8:
+                mesNombre = "Agosto";
+                break;
+            case 9:
+                mesNombre = "Septiembre";
+                break;
+            case 10:
+                mesNombre = "Octubre";
+                break;
+            case 11:
+                mesNombre = "Noviembre";
+                break;
+            case 12:
+                mesNombre = "Diciembre";
+                break;
+            default:
+                mesNombre = "Número inválido. Por favor, ingresa un número del 1 al 12.";
+        }
+        console.log("El mes correspondiente al número " + mesNumero + " es: " + mesNombre);
+    </script>
+    <script>
+//         Escribe un programa que solicite al usuario el radio de un círculo y luego calcule y muestre el área y el perímetro del círculo.
+// • Solicita al usuario que ingrese el radio del círculo.
+// • Define dos funciones: una para calcular el área del círculo y otra para calcular el
+// perímetro del círculo.
+// • Usa las fórmulas matemáticas apropiadas dentro de estas funciones para
+// calcular el área (π * radio^2) y el perímetro (2 * π * radio) del círculo.
+// • Llama a estas funciones con el radio proporcionado por el usuario como
+// argumento.
+// • Muestra los resultados del área y el perímetro al usuario.
+        function calcularArea(radio) {
+            return Math.PI * Math.pow(radio, 2);
+        }
+
+        function calcularPerimetro(radio) {
+            return 2 * Math.PI * radio;
+        }
+
+        const radio = parseFloat(prompt("Ingresa el radio del círculo:"));
+        const area = calcularArea(radio);
+        const perimetro = calcularPerimetro(radio);
+
+        console.log("El área del círculo es: " + area.toFixed(2));
+        console.log("El perímetro del círculo es: " + perimetro.toFixed(2));
+    </script>
+    <script>
+//         Escribe una función llamada calculatePower que tome dos
+// parámetros: base y exponent. Esta función debe calcular y devolver el resultado de elevar
+// la base al exponente.
+// Ejemplo:
+// // Llamada a la función
+// let result = calculatePower(2, 3);
+// console.log(result); // Resultado esperado: 8
+        function calculatePower(base, exponent) {
+            return Math.pow(base, exponent);
+        }
+
+        let result = calculatePower(2, 3);
+        console.log(result);
+    </script>
+    <script>
+//         Crea un programa que solicite al usuario ingresar una lista de números y luego encuentre el número más grande en esa lista.
+// • Solicita al usuario que ingrese la cantidad de números que quiere introducir.
+// • Solicita al usuario que introduzca cada número uno por uno.
+// • Almacena estos números en un array.
+// • Escribe una función llamada findLargestNumber que tome un array de números
+// como entrada y devuelva el número más grande en el array.
+// • Dentro de la función, itera a través del array usando un bucle for para encontrar el número más grande.
+// • Muestra el número más grande encontrado al usuario
+// Asegúrate de que el programa utilice arrays para almacenar los números y la función para encontrar el número más grande.
+// Ejemplo:
+// • Ingresa la cantidad de números: 5
+// • Ingresa el número 1: 10
+// • Ingresa el número 2: 25
+// • Ingresa el número 3: 7
+// • Ingresa el número 4: 18
+// • Ingresa el número 5: 12
+// • El número más grande es: 25
+        function findLargestNumber(numbers) {
+            let largest = numbers[0];
+            for (let i = 1; i < numbers.length; i++) {
+                if (numbers[i] > largest) {
+                    largest = numbers[i];
+                }
+            }
+            return largest;
+        }
+
+        const cantidad = parseInt(prompt("Ingresa la cantidad de números:"));
+        const numeros = [];
+
+        for (let i = 0; i < cantidad; i++) {
+            const numero = parseFloat(prompt("Ingresa el número " + (i + 1) + ":"));
+            numeros.push(numero);
+        }
+
+        const numeroMasGrande = findLargestNumber(numeros);
+        console.log("El número más grande es: " + numeroMasGrande);
+    </script>
+    <script>
+//         Bucle for
+// • Imprimir los números del 20 al 30 en la consola.
+// • Imprimir los números pares del 30 al 50 en la consola.
+// • Calcular la suma de los primeros 50 números naturales.
+// • Imprimir la tabla de multiplicar del 8.
+// • Imprimir los elementos de un array.
+// • Imprimir un patrón de asteriscos en forma de triángulo, con altura 9.
+// • Calcular la suma de los números pares del 1 al 50.
+// • Imprimir los números del 30 al 20 en orden descendente.
+// • Calcular el promedio de un array de números
+        for (let i = 20; i <= 30; i++) {
+            console.log(i);
+        }
+
+        for (let i = 30; i <= 50; i += 2) {
+            console.log(i);
+        }
+
+        let suma = 0;
+        for (let i = 1; i <= 50; i++) {
+            suma += i;
+        }
+        console.log("Suma de los primeros 50 números naturales: " + suma);
+
+        const num = 8;
+        console.log("Tabla de multiplicar del " + numero + ":");
+        for (let i = 1; i <= 10; i++) {
+            console.log(numero + " x " + i + " = " + (numero * i));
+        }
+
+        const array = [5, 10, 15, 20, 25];
+        console.log("Elementos del array:");
+        for (let i = 0; i < array.length; i++) {
+            console.log(array[i]);
+        }
+
+        const altura = 9;
+        console.log("Patrón de asteriscos en forma de triángulo:");
+        for (let i = 1; i <= altura; i++) {
+            console.log("*".repeat(i));
+        }
+
+        let sumaPares = 0;
+        for (let i = 1; i <= 50; i++) {
+            if (i % 2 === 0) {
+                sumaPares += i;
+            }
+        }
+        console.log("Suma de los números pares del 1 al 50: " + sumaPares);
+
+        console.log("Números del 30 al 20 en orden descendente:");
+        for (let i = 30; i >= 20; i--) {
+            console.log(i);
+        }
+
+        const numerosArray = [10, 20, 30, 40, 50];
+        let sumaArray = 0;
+        for (let i = 0; i < numerosArray.length; i++) {
+            sumaArray += numerosArray[i];
+        }
+        const promedio = sumaArray / numerosArray.length;
+        console.log("Promedio del array de números: " + promedio);
+    </script>
+</body>
+</html>

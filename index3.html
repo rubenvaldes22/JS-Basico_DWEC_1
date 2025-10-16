@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usabilidad en las imágenes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+    .image-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+    .background-image {
+      position: relative;
+      background-image: url('https://www.eniun.com/wp-content/uploads/Tutorial-Usabilidad-1-900x450.png');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      margin-top: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .background-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5); 
+    }
+    .background-image p {
+      position: relative;
+      color: #fff;
+      text-align: center;
+      font-size: 18px;
+      padding: 100px 20px;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Usabilidad en las imágenes</h1>
+  <p>Imagen optimizada para la web y con etiqueta alt descriptiva:</p>
+  <div class="image-container">
+    <img src="https://www.eniun.com/wp-content/uploads/Curso-Visual-Studio-Code.png" alt="Logo y curso de Visual Studio Code de Eniun">
+  </div>
+  <p>Texto con buen contraste sobre la imagen de fondo:</p>
+  <div class="background-image">
+    <p>Texto claramente legible gracias al aumento del contraste.</p>
+  </div>
+</body>
+</html>
