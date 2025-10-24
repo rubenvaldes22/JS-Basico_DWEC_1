@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio de manejo de textos</title>
+</head>
+<body>
+    <script>
+//         1. Invertir una cadena. Usar una función a la que se le pase un texto como
+// parámetro. Usar un bucle for.// Evita la comprobación explícita de null usando el operador lógico OR
+let cadena = prompt("Escribe una cadena de texto:");
+
+function invertirCadena(cadena) {
+    let cadenaInvertida = "";
+    for (let i = cadena.length - 1; i >= 0; i--) {
+        cadenaInvertida += cadena[i];
+    }
+    return cadenaInvertida;
+}
+
+console.log(invertirCadena(cadena));
+
+// 2. Contar cuántas veces aparece una letra en un texto como parámetro.
+// Usar un bucle for.
+let texto= prompt("escribe una cadena de texto: ");
+    function aparece(cadena, letra){
+        let sumatorio=0
+        for (let i=0; i<texto.length;i++){
+            if (texto[i]== letra){
+                sumatorio+=1
+            }
+        }
+            console.log("la letra " + letra + " aparece " + sumatorio + " veces")
+}
+aparece(texto, "a")
+
+// 3. Detectar si un texto es un palíndromo. Un palíndromo es una palabra o
+// frase que suena igual leyéndola hacia adelante que hacia atrás (de manera
+// invertida, comenzando desde la última letra de la frase). Usar una función
+// a la que se le pase un texto como parámetro.
+let cadenaPalindromo = prompt("escribe una cadena de texto para comprobar si es palindromo:");
+function esPalindromo(cadena) {
+    let cadenaInvertida = "";
+    for (let i = cadena.length - 1; i >= 0; i--) {
+        cadenaInvertida += cadena[i];
+    }
+    if (cadena === cadenaInvertida) {
+        console.log("La cadena " + cadenaPalindromo + " es un palíndromo.");
+    } else {
+        console.log("La cadena " + cadenaPalindromo + " no es un palíndromo.");
+    }
+}
+esPalindromo(cadenaPalindromo);
+
+// 4. Contar las vocales en un texto. Usar una función a la que se le pase un
+// texto como parámetro. Usar un bucle for.
+let textoVocales = prompt("escribe una cadena de texto para contar las vocales:");
+function contarVocales(cadena) {
+    let contador = 0;
+    let vocales = "aeiou";
+    for (let i = 0; i < cadena.length; i++) {
+        if (vocales.includes(cadena[i].toLowerCase())){
+            contador+=1;
+        }
+    }
+    console.log("El número de vocales en la cadena es: " + contador);
+}
+contarVocales(textoVocales);
+
+// 5. Reemplazar una palabra en una frase. Usar una función a la que se le
+// pase un texto como parámetro. Usar un bucle for.
+function reemplazarPalabra(frase, vieja, nueva) {
+  let palabra = "";
+  let resultado = "";
+
+  for (let i = 0; i <= frase.length; i++) {
+    let letra = frase[i] || " "; 
+
+    if (letra === " ") {
+      if (palabra === vieja) {
+        resultado += nueva + " ";
+      } else {
+        resultado += palabra + " ";
+      }
+      palabra = "";
+    } else {
+      palabra += letra;
+    }
+  }
+
+  return resultado;
+}
+
+console.log(reemplazarPalabra("hola me llamo ruben", "ruben", "curro"));
+
+// 6. Poner en mayúscula la primera letra de cada palabra. Usar una función a
+// la que se le pase un texto como parámetro. Usar un bucle for.
+function capitalizarPalabras(frase) {
+    let resultado = "";
+    let nuevaPalabra = true;
+
+    for (let i = 0; i < frase.length; i++) {
+        let letra = frase[i];
+
+        if (letra === " ") {
+            resultado += letra;
+            nuevaPalabra = true;
+        } else {
+            if (nuevaPalabra) {
+                resultado += letra.toUpperCase();
+                nuevaPalabra = false;
+            } else {
+                resultado += letra;
+            }
+        }
+    }
+
+    return resultado;
+}
+console.log(capitalizarPalabras("hola me llamo ruben"));
+
+// 7. Contar cuántas veces una letra aparece en una palabra usando charAt().
+// Usar una función a la que se le pase un texto como parámetro. Usar un
+// bucle for.
+function contarLetra(frase, letraBuscada) {
+    let contador = 0;
+    for (let i = 0; i < frase.length; i++) {
+        if (frase.charAt(i) === letraBuscada) {
+            contador++;
+        }
+    }
+    return contador;
+}
+console.log(contarLetra("programacion", "o"));
+
+    </script>
+</body>
+</html>
