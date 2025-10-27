@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Arrays</title>
+</head>
+<body>
+    <script>
+//1. En este script deberás crear un array para guardar los nombres de los días de la semana,
+// empezando por 0 para el domingo. Para comprobar el funcionamiento pide al usuario un
+// número entre 0 y 6 y devuelve el nombre del día. Se supone que el dato tecleado estará
+// entre 0 y 6.
+// Si tecleo el número 4 me deberá decir que el día de la semana es jueves.
+dias_de_la_semana= ("lunes","martes","miercoles","jueves","viernes","sabado","domingo")
+let dia_numero = parseInt(prompt("escribe un numero del 0 y 6"));
+let dia_nombre;
+        switch(dia_numero){
+            case 0:
+                dia_nombre="lunes";
+                break;
+            case 1:
+                dia_nomre="martes";
+                break;
+            case 2:
+                dia_nombre="miercoles";
+                break;
+            case 3:
+                dia_nombre="jueves";
+                break;
+            case 4:
+                dia_nombre="viernes";
+                break;
+            case 5:
+                dia_nombre="sabado";
+                break;
+            case 6:
+                dia_nombre="domingo";
+                break;
+        }
+        console.log("el dia correspondiente al numero " + dia_numero + " pertenece al dia " + dia_nombre);
+
+// 2. Crea un array booleano con dos valores 'verdadero' y 'falso'. Este array te sirve para
+// traduicr los valores true y false. Usalo para que el script muestre un alert con el nombre
+// vedadero si un usuario teclea un valor entre 0 y 9 y falso en el caso contrario.
+// Por ejemplo, al teclear 10 deberá devolver falso
+let booleano = [true, false];
+let numero = parseInt(prompt("escribe un numero del 0 al 9:"));
+if (numero >=0 && numero <=9){
+    alert (booleano[0]);
+} else {
+    alert (booleano[1]);
+}
+
+// 3. Sin usar métodos del objeto array, diseña una función llamada sumaLista() capaz de
+// sumar todos los números que forman el array que se le pase como argumento.
+// Si ejecuto sumaLista([2,4,5,1,2]) deberá devolver como resultado 14.
+function sumalista(arr){
+    let suma=0
+    for (let i=0; i<arr.length; i++){
+        suma += arr[i];
+    }
+return suma;
+}
+console.log(sumalista([2, 4, 5, 1, 2])); 
+
+// 4. Diseña un script que vaya leyendo números y guardándolos en un array. Una vez lleno
+// mostrará el array y deberá decir cuántos números son pares y cuantos son impares. La
+// entrada de datos termina cuando el usuario teclea 0 o un valor no numérico.
+// Intenta resolverlo sin usar métodos del objeto array, solo indices y longitudes de arrays. No
+// debe aceptar valores no numéricos (isNaN(valor) permite detectar valores no numéricos).
+// Por ejemplo, si tecleo: 3,5,4,6,7,8, 11 el script me dirá que el array de entrada es [3,5,4,6,7,8,
+// 11] y que hay 3 pares y 4 impares.
+let lista_numeros = [];
+let valor = parseInt(prompt("Introduce un número (0 para terminar):"));
+while (valor !== 0 && !isNaN(valor)) {
+    lista_numeros.push(valor) 
+    valor = parseInt(prompt("Introduce otro número (0 para terminar):"));
+}
+console.log("el array de entrada es :", lista_numeros);
+
+let pares = 0;
+let impares = 0;
+for (let i = 0; i < lista_numeros.length; i++) {
+    if (lista_numeros[i] % 2 === 0) {
+        pares++;
+    } else {
+        impares++;
+    }
+}
+console.log("Cantidad de números pares:", pares);
+console.log("Cantidad de números impares:", impares);
+            
+// 5. Escribe una función que pueda devolver el valor más pequeño de un array numérico o el
+// índice de ese valor. El segundo parámetro de la función dirá si debe devolver el valor ("v") o
+// el índice ("i"). No uses métodos del objeto array.
+// Se supone que el primer parámetro siempre será una matriz llena con al menos 1 número
+// y sin duplicados. Se supone que el segundo parámetro será una letra con uno de dos
+// valores: 'v' 'i'.
+// min([4,5,7], 'v') devolverá 4, mientras que min([4,5,7], 'i') devolverá 0.
+function min(arr, tipo){
+    let min_valor = arr[0];
+    let min_indice = 0;
+    for (let i = 1; i < arr.length; i++){
+        if (arr[i] < min_valor){
+            min_valor = arr[i];
+            min_indice = i;
+        }
+    }
+    if (tipo === 'v'){
+        return min_valor;
+    } else if (tipo === 'i'){
+        return min_indice;
+    }
+}
+console.log(min([4, 5, 7], 'v'));
+console.log(min([4, 5, 7], 'i'));
+
+// 6. Escribe una función que determina si la letra que se le pasa como argumento se
+// encuentra contenida dentro de un array de letras que se le pasa como segundo argumento.
+// Se trata de resolverlo sin usar métodos del objeto array, solo el dato tipo array.
+// existeEn('a', ['w','e','r','i']) devolverá false porque la letra 'a' no existe en el array.
+function existeEn(letra, arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === letra) {
+            return true;
+        }
+    }
+    return false;
+}
+console.log(existeEn('a', ['w', 'e', 'r', 'i'])); 
+console.log(existeEn('a', ['a', 'e', 'r', 'i'])); 
+
+// 7. En este ejercicio debes crear una función que reciba como argumento una letra y
+// devuelva verdadero o falso (tru o false) dependiendo de si es una vocal o no. Debe funcionar
+// igual con mayúsculas y con minúsculas y por supuesto usando arrays. Solo se aceptan
+// letras internacionales (sin acentos).
+// Por ejemplo, esVocal('A') dirá true, mientras que esVocal("z") dirá false.
+let letrausuario = prompt("Introduce una letra:");
+function esVocal(letra) {
+    if (!letra || letra.length !== 1) {
+        return false;
+    } else{
+        return 'aeiou'.includes(letra.toLowerCase());
+    }
+}
+console.log(esVocal(letrausuario));
+
+// 8. Escribe una función que reciba como argumento un array y que devuelva una cadena de
+// caracteres formada por los elementos del array separados por un guión
+// Si llamamos a la función como listar(["rojo", "verde", "azul") deberá devolver "rojo-verde-
+// azul"
+function listar(arr) {
+    let resultado = '';
+    for (let i = 0; i < arr.length; i++) {
+        resultado += arr[i];
+        if (i < arr.length - 1) {
+            resultado += '-';
+        }
+    }
+    return resultado;
+}
+console.log(listar(["rojo", "verde", "azul"]));
+
+// 9. Un servicio de atención al ciente tiene establecido turnos semanales para sus
+// empleados de manera que cada día de la semana se encarga del servicio una
+// persona: lunes - María, Martes - Luis, Miércoles - Antonia, Jueves - Pedro, Viernes -
+// Marisa.
+// Usa un array para almacenar los datos del servicio. En este array cada elemento será un par
+// día - nombre.
+// Crea una función que responda con el nombre de la persona encargada del servicio
+// sabiendo el día. Si el día no existe deberá decir que no hay servicio. Los nombres de los días
+// deben ir en minúsculas.
+// Si le pido servicio('Lunes') me debería decir "Este día se encarga María" y si le pido
+// servicio(Miércoles") me daría Antonia.  
+const turno = [
+    ['lunes', 'Ruben'],
+    ['martes', 'Curro'],
+    ['miercoles', 'Ale'],
+    ['jueves', 'Andres'],
+    ['viernes', 'joselu']
+];
+
+function servicio(dia) {
+    if (!dia) return 'No hay servicio';
+    let d = dia.toLowerCase();
+    for (let i = 0; i < turno.length; i++) {
+        if (turno[i][0] === d) {
+            return 'Este día se encarga ' + turno[i][1];
+        }
+    }
+    return 'No hay servicio';
+}
+
+console.log(servicio('Lunes'));    
+console.log(servicio('miercoles'));  
+
+// 10. Una tienda vende monitores, teclados y ratones. Los precios se almacenan en una
+// estructura array conde cada elemento es un par producto - precio.
+// Diseña una función que reciba como argumento el nombre de un producto (minúscula) y
+// devuelva su precio.
+// Si la lista de precios es monitor: 200€, teclado: 20€ ratón: 10€, al pedir precio('monitor') me
+// devolverá 200.
+const precios = [
+    ['monitor', 200],
+    ['teclado', 20],
+    ['raton', 10]
+];
+function precio(producto) {
+    for (let i = 0; i < precios.length; i++) {
+        if (precios[i][0] === producto) {
+            return precios[i][1];
+        }
+    }
+    return 'Producto no encontrado';
+}
+console.log(precio('monitor'));
+
+    </script>
+</body>
+</html>
